@@ -1,0 +1,19 @@
+services:
+ 
+  db:
+    image: postgres
+    container_name: goshopdb
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD_FILE: /run/secrets/pg-local-db-root-pwd
+    volumes: 
+      - ./pgdata:/var/lib/postgresql/data
+    secrets:
+      - pg-local-db-root-pwd
+
+secrets:
+  pg-local-db-root-pwd: 
+    file: ./.pg-local-pwd
+

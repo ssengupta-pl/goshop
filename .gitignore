@@ -19,3 +19,8 @@
 
 # Go workspace file
 go.work
+
+####### My files #######
+.pg-local-pwd
+pgdata
+.dsn
